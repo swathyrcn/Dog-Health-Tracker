@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pawsitive Health</title>
+  <link rel="stylesheet" href="{% static 'healthapp/css/style.css' %}" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <!-- Logo + Brand Name -->
+      <div class="logo-container">
+        <!-- Paw print logo (adjust filename + path as needed) -->
+        <img 
+          src="{% static 'healthapp/images/paw.png' %}" 
+          alt="Pawsitive Health" 
+          class="logo-img"
+        >
+        <span class="brand-name">PAWSITIVE HEALTH</span>
+      </div>
+
+      <!-- Navigation links -->
+      <ul class="nav-links">
+        
+        <li><a href="{% url 'dog_list' %}">Dog Profiles</a></li>
+        <li><a href="{% url 'diet_nutrition_overview' %}">Diet & Nutrition</a></li>
+
+        <li><a href="{% url 'tips' %}">Tips</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'logout_user' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login_user' %}">Login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Pawsitive Health. All rights reserved.</p>
+  </footer>
+</body>
+</html>

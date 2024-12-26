@@ -1,0 +1,51 @@
+{% extends 'healthapp/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-box">
+        <h1>Track Your Dog's Health Effortlessly</h1>
+        <p>Empower your dog's wellness journey with personalized insights and reminders.</p>
+        <a class="btn-primary" href="{% url 'register' %}">Get Started</a>
+    </div>
+</section>
+
+<!-- Why Choose Section -->
+<section class="why-choose-section">
+  <h2>Why Choose Pawsitive Health?</h2>
+  <div class="features-container">
+
+    <!-- Feature 1 -->
+    <div class="feature-box">
+      <!-- Example placeholder image for "health tracking" -->
+      <img src="{% static 'healthapp/images/health_tracking.png' %}" alt="Health Tracking" />
+      <h3>Health Tracking</h3>
+      <p>
+        Monitor your dog's health with <strong>easy-to-use tools</strong>.
+      </p>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="feature-box">
+      <!-- Example placeholder image for "diet & nutrition" -->
+      <img src="{% static 'healthapp/images/dies_nutrition.png' %}" alt="Diet & Nutrition" />
+      <h3>Diet & Nutrition</h3>
+      <p>
+        Log meals and ensure a balanced diet for your dog.
+      </p>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="feature-box">
+      <!-- Example placeholder image for "reminders" -->
+      <img src="{% static 'healthapp/images/reminders.png' %}" alt="Reminders" />
+      <h3>Reminders</h3>
+      <p>
+        Stay on top of vet visits, vaccinations, and medications.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

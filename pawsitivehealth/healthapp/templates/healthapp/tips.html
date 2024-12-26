@@ -1,0 +1,202 @@
+{% extends 'healthapp/base.html' %}
+{% load static %}
+{% block content %}
+<section class="tips-section">
+  <div class="tips-container">
+    <!-- Navigation for All Dogs -->
+    
+
+    <!-- General Tips Section -->
+    <div class="general-tips">
+      <h2 class="section-title">General Tips for Your Dog’s Health</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h4>Regular Grooming</h4>
+          <p>Brush your dog's coat every 2–3 days to prevent matting and remove loose fur.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Healthy Diet</h4>
+          <p>Provide a balanced diet rich in proteins, healthy fats, and essential vitamins.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Dental Care</h4>
+          <p>Brush your dog's teeth 2–3 times a week using a dog-specific toothbrush and toothpaste.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Exercise</h4>
+          <p>Ensure daily physical activity suited to your dog's breed, such as a 30-minute walk or play session.</p>
+        </div>
+
+        <div class="tip-card">
+          <h4>Hydration</h4>
+          <p>Keep fresh and clean water available for your dog at all times to stay hydrated.</p>
+        </div>
+        <div class="tip-card">
+          <h4>Parasite Control</h4>
+          <p>Regularly check for ticks and fleas, especially after outdoor activities, and use vet-approved treatments.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Dog Tips -->
+    {% if dog %}
+    <div class="dog-details">
+      <h2 class="section-title">Detailed Tips for {{ dog.name }}</h2>
+      <p class="dog-info">
+        Breed: <strong>{{ dog.breed }}</strong> | Age: <strong>{{ dog.age }} years</strong> | Weight: <strong>{{ dog.weight }} kg</strong>
+      </p>
+    </div>
+
+    <!-- Grooming Tips -->
+    <div class="grooming-tips">
+      <h3 class="section-title">Grooming Schedule</h3>
+      <ul class="tips-list">
+        <li><strong>Bathing:</strong> {{ grooming_tips.bath }}</li>
+        <li><strong>Brushing:</strong> {{ grooming_tips.brushing }}</li>
+        <li><strong>Ear Cleaning:</strong> {{ grooming_tips.ear_cleaning }}</li>
+        <li><strong>Nail Clipping:</strong> {{ grooming_tips.nail_clipping }}</li>
+      </ul>
+    </div>
+
+    <!-- Recommended Products -->
+    <div class="recommended-products">
+      <h3 class="section-title">Recommended Products for {{ dog.name }}</h3>
+      <ul class="product-list">
+        {% for product in recommended_products %}
+          <li class="product-item">{{ product }}</li>
+        {% empty %}
+          <li class="no-products">No recommended products available.</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  /* General Styles */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+
+  .tips-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    color: #f0624d;
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #f0624d;
+    margin: 0.5rem auto;
+  }
+
+  /* Dog List Styles */
+  .dog-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .dog-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .dog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .dog-link {
+    text-decoration: none;
+    color: #333;
+  }
+
+  .dog-link h4 {
+    margin: 0.5rem 0;
+  }
+
+  /* Tips Grid */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .tip-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .tip-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #f0624d;
+  }
+
+  .tips-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .tips-list li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  /* Product List */
+  .product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .product-item {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .no-products {
+    color: #777;
+    font-style: italic;
+  }
+</style>
+{% endblock %}

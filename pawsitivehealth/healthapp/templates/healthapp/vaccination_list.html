@@ -1,0 +1,14 @@
+{% extends 'healthapp/base.html' %}
+{% block content %}
+<h2>Vaccinations for {{ dog.name }}</h2>
+<ul>
+    {% for vaccination in vaccinations %}
+        <li>
+            {{ vaccination.name }} - Last Given: {{ vaccination.last_given }} - Next Due: {{ vaccination.next_due_date }}
+        </li>
+    {% empty %}
+        <li>No vaccinations recorded.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_vaccination' dog.id %}">Add Vaccination</a>
+{% endblock %}

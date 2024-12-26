@@ -1,0 +1,51 @@
+{% extends 'healthapp/base.html' %}
+{% load static %}
+{% block content %}
+<section class="dog-tips-section">
+  <div class="dog-tips-container">
+    <h1>Care Tips for {{ dog.name }}</h1>
+    <p><strong>Breed:</strong> {{ dog.breed }}</p>
+    <p><strong>Age:</strong> {{ dog.age }} years</p>
+    <p><strong>Weight:</strong> {{ dog.weight }} kg</p>
+
+    <h2>Grooming Schedule</h2>
+    <ul>
+      <li><strong>Next Bath:</strong> {{ dog.next_bath_date|date:"M. d, Y" }}</li>
+      <li><strong>Nail Clipping:</strong> {{ dog.next_nail_clipping|date:"M. d, Y" }}</li>
+      <li><strong>Ear Cleaning:</strong> {{ dog.next_ear_cleaning|date:"M. d, Y" }}</li>
+      <li><strong>Teeth Brushing:</strong> {{ dog.next_teeth_brushing|date:"M. d, Y" }}</li>
+    </ul>
+
+    <h2>Recommended Products</h2>
+    <ul>
+      {% for product in dog.recommended_products %}
+        <li>{{ product }}</li>
+      {% empty %}
+        <li>No recommended products available for this dog.</li>
+      {% endfor %}
+    </ul>
+
+    <a href="{% url 'tips' %}" class="btn-secondary">Back to All Dogs</a>
+  </div>
+</section>
+
+<style>
+  .dog-tips-section {
+    padding: 2rem;
+  }
+  .dog-tips-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .btn-secondary {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #007bff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+</style>
+{% endblock %}

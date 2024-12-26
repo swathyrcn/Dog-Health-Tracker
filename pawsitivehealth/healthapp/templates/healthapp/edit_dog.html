@@ -1,0 +1,24 @@
+{% extends 'healthapp/base.html' %}
+{% load static %}
+{% block content %}
+<section class="edit-dog-section">
+  <div class="edit-dog-box">
+    <h2>Edit {{ dog.name }}</h2>
+    <!-- Display any validation errors -->
+    {% if form.errors %}
+      <div class="error-messages">
+        {% for field in form %}
+          {% for error in field.errors %}
+            <p>{{ field.label }}: {{ error }}</p>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Update</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

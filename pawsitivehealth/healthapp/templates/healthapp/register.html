@@ -1,0 +1,32 @@
+{% extends 'healthapp/base.html' %}
+{% load static %}
+{% block content %}
+<section class="register-section">
+  <div class="register-box">
+    <h2>Register</h2>
+    <!-- Display form errors if password doesn't match or other validation fails -->
+    {% if form.errors %}
+      <div class="error-messages">
+        {{ form.non_field_errors }}
+        <!-- Show field-specific errors (like password mismatch) -->
+        {% for field in form %}
+          {% for error in field.errors %}
+            <p>{{ field.label }}: {{ error }}</p>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- If user already has an account, link to login -->
+    <p class="login-redirect">
+      Already have an account? 
+      <a href="{% url 'login_user' %}">Sign in</a>
+    </p>
+  </div>
+</section>
+{% endblock %}

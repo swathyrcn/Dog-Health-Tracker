@@ -1,0 +1,15 @@
+Breed,Age,Health Condition,Walk Minutes,Playtime Minutes,Mental Stimulation Minutes,Recommendation
+Golden Retriever,5,Normal,60,30,15,Maintain routine
+Pug,3,Obesity,20,15,5,Increase activity
+Labrador,7,Normal,90,45,20,Maintain routine
+Golden Retriever,2,Underweight,30,20,10,Increase activity
+Pug,4,Normal,25,20,10,Maintain routine
+Golden Retriever,8,Normal,70,40,20,Maintain routine
+Pug,5,Obesity,15,10,5,Increase activity
+Labrador,6,Normal,85,50,25,Maintain routine
+Golden Retriever,3,Normal,50,30,15,Maintain routine
+Pug,6,Underweight,30,25,10,Increase activity
+Labrador,9,Obesity,40,30,15,Reduce activity
+Golden Retriever,10,Normal,80,45,20,Maintain routine
+Pug,2,Normal,20,15,5,Maintain routine
+Labrador,12,Obesity,35,25,10,Reduce activity

@@ -1,0 +1,1166 @@
+/* General reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* Make sure you don’t have height: 100% or overflow hidden here */
+    /* body { overflow-y: auto; } // optional, typically default is scroll */
+  }
+  
+  /* Navbar (already have, just keep as is or tweak) */
+  /*******************************
+  Navbar
+*******************************/
+.navbar {
+    background-color: #fa8063; /* coral/salmon color */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+    /* You can adjust these to whatever size you need. */
+  }
+  
+  .brand-name {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;    /* removes bullet points */
+    display: flex;       /* places items side by side */
+    gap: 2rem;           /* space between menu items */
+    margin: 0;           /* reset default */
+    padding: 0;          /* reset default */
+  }
+  
+  .nav-links li {
+    /* No extra styling needed, but you can add some if you want. */
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline; /* simple hover effect */
+  }
+  
+  
+  /* Hero Section */
+  .hero-section {
+    background: #ffe8d7;  /* light peach, as before */
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  /* The dark/black rectangular box */
+  .hero-box {
+    background-color: #5f4e3e; /* or #4c4035, #333, #000, etc. */
+    padding: 2rem;
+    border-radius: 10px; /* optional curve corners */
+    display: inline-block; /* so it wraps closely around the text, or use a fixed width if you prefer */
+    color: #fff; /* ensure text is readable on dark background */
+  }
+  
+  /* Example button styling */
+  .btn-primary {
+    display: inline-block;
+    background-color: #fa8063;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  
+  /* Why Choose Section */
+  .why-choose-section {
+    background-color: #fde9dd; /* Light peach background */
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .why-choose-section h2 {
+    font-size: 2rem;
+    color: #fa8063;
+    margin-bottom: 2rem;
+  }
+  
+  .features-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  /* So it’s responsive */
+    gap: 2rem;
+  }
+  
+  .feature-box {
+    background: #fff;
+    width: 280px;          /* Adjust as needed */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .feature-box img {
+    max-width: 100px;    /* Adjust for your images */
+    margin-bottom: 1rem;
+  }
+  
+  .feature-box h3 {
+    color: #fa8063;
+    margin-bottom: 0.5rem;
+  }
+  
+  .feature-box p {
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #fa8063;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+
+
+
+
+  /* Make sure body & html allow scrolling if content exceeds the viewport */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #fefaf2; /* a soft background color */
+    min-height: 100vh;   /* ensure full-height, allowing scrolling */
+  }
+  
+  /* --- Register Page Styling --- */
+  .register-section {
+    /* Enough vertical space that it can scroll if needed. */
+    min-height: 80vh; 
+    padding: 3rem;
+    background: #faf3ee; /* lightly different background to distinguish */
+  }
+  
+  .register-box {
+    max-width: 420px;
+    margin: 0 auto; /* center horizontally */
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .register-box h2 {
+    margin-bottom: 1rem;
+    color: #fa8063; /* match your coral color */
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  /* Form error messages */
+  .error-messages p {
+    color: #ff5555;
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .register-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Labels */
+  .register-box label {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  /* Input fields */
+  .register-box input[type="text"],
+  .register-box input[type="email"],
+  .register-box input[type="password"] {
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  /* Sign Up button */
+  .register-box button[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.8rem;
+    background-color: #fa8063;
+    color: #ffffff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-box button[type="submit"]:hover {
+    background-color: #f86e4f; /* a slightly darker coral */
+  }
+  
+  /* Link to login page */
+  .login-redirect {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .login-redirect a {
+    color: #fa8063;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .login-redirect a:hover {
+    text-decoration: underline;
+  }
+  
+
+
+
+
+  /* SIGN IN PAGE STYLING */
+.login-section {
+    min-height: 80vh; /* enough vertical space to scroll if needed */
+    padding: 3rem;
+    background: #faf3ee; /* lightly tinted background */
+  }
+  
+  .login-box {
+    max-width: 420px;
+    margin: 0 auto; /* center horizontally */
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .login-box h2 {
+    margin-bottom: 1rem;
+    color: #fa8063; /* your coral color */
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  /* Error messages (e.g. invalid password) */
+  .error-messages p {
+    color: #ff5555;
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .login-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Labels */
+  .login-box label {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  /* Input fields */
+  .login-box input[type="text"],
+  .login-box input[type="password"] {
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  /* Login button */
+  .login-box button[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.8rem;
+    background-color: #fa8063;
+    color: #ffffff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-box button[type="submit"]:hover {
+    background-color: #f86e4f;
+  }
+  
+  /* Link to sign up page */
+  .register-redirect {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .register-redirect a {
+    color: #fa8063;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .register-redirect a:hover {
+    text-decoration: underline;
+  }
+  
+
+
+
+
+  /* DOG LIST PAGE */
+.dog-list-section {
+    min-height: 80vh; 
+    padding: 3rem;
+    background-color: #faf3ee; /* subtle background color */
+  }
+  
+  .dog-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .dog-list-header h2 {
+    font-size: 2rem;
+    color: #fa8063; /* match your coral color */
+    margin: 0;
+  }
+  
+  .btn-add-dog {
+    padding: 0.6rem 1.2rem;
+    background-color: #fa8063;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-add-dog:hover {
+    background-color: #f86e4f;
+  }
+  
+  .dog-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .dog-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 250px;
+    padding: 1rem;
+  }
+  
+  .dog-card h3 {
+    color: #fa8063;
+    margin-top: 0;
+  }
+  
+  .dog-card p {
+    margin: 0.5rem 0;
+  }
+  
+  .dog-card a {
+    color: #fa8063;
+    text-decoration: none;
+    margin-right: 0.5rem;
+  }
+  
+  .dog-card a:hover {
+    text-decoration: underline;
+  }
+  
+
+
+
+  .add-dog-section {
+    min-height: 80vh;
+    padding: 3rem;
+    background: #faf3ee;
+  }
+  
+  .add-dog-box {
+    max-width: 500px;
+    margin: 0 auto; /* center horizontally */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .add-dog-box h2 {
+    color: #fa8063;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .add-dog-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-dog-box label {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .add-dog-box input[type="text"],
+  .add-dog-box input[type="number"],
+  .add-dog-box input[type="float"],
+  .add-dog-box textarea {
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  /* Adjust for your fields if you use number fields or text fields for disease/medications */
+  
+  .add-dog-box button[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.8rem;
+    background-color: #fa8063;
+    color: #ffffff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-dog-box button[type="submit"]:hover {
+    background-color: #f86e4f;
+  }
+  
+  .error-messages p {
+    color: #ff5555;
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+
+
+
+  /* EDIT DOG PAGE */
+.edit-dog-section {
+    min-height: 80vh;           /* ensures scrollable height if content is tall */
+    padding: 3rem;              /* some spacing from the top */
+    background-color: #faf3ee;  /* a soft background color, matching your theme */
+  }
+  
+  .edit-dog-box {
+    max-width: 500px;
+    margin: 0 auto;        /* center horizontally */
+    background: #fff;      /* white background for the form card */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+  }
+  
+  .edit-dog-box h2 {
+    margin-bottom: 1rem;
+    color: #fa8063; /* your coral brand color */
+    text-align: center;
+  }
+  
+  .error-messages p {
+    color: #ff5555;
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .edit-dog-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-dog-box label {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .edit-dog-box input[type="text"],
+  .edit-dog-box input[type="number"],
+  .edit-dog-box input[type="float"],
+  .edit-dog-box textarea {
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .edit-dog-box button[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.8rem;
+    background-color: #fa8063;
+    color: #ffffff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-dog-box button[type="submit"]:hover {
+    background-color: #f86e4f;
+  }
+
+
+
+
+/* DELETE DOG PAGE */
+.delete-dog-section {
+    min-height: 80vh;            /* ensures scroll if content is long on some screens */
+    padding: 3rem;               /* spacing from edges */
+    background-color: #faf3ee;   /* subtle background color */
+  }
+  
+  .delete-dog-box {
+    max-width: 500px;
+    margin: 0 auto;              /* center horizontally */
+    background: #fff;            /* white background for the card */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .delete-dog-box h2 {
+    color: #fa8063;
+    margin-bottom: 1rem;
+  }
+  
+  .delete-dog-box p {
+    margin-bottom: 1.5rem;
+    color: #444;
+  }
+  
+  /* Danger button styling for a delete action */
+  .delete-dog-box .btn-danger {
+    padding: 0.7rem 1.2rem;
+    background-color: #e74c3c;   /* red-ish color to indicate destructive action */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-dog-box .btn-danger:hover {
+    background-color: #d62c1a;
+  }
+  
+
+
+
+
+  /* DIET & NUTRITION PAGE */
+.diet-nutrition-section {
+    min-height: 80vh;           /* ensures scrolling if content is tall */
+    padding: 3rem;
+    background-color: #faf3ee;  /* subtle background */
+  }
+  
+  .diet-nutrition-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .diet-nutrition-content h2 {
+    color: #fa8063; /* coral color */
+    margin-bottom: 1rem;
+  }
+  
+  .diet-nutrition-content p {
+    color: #444;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+  
+  .diet-plan-box, .meal-logs-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .diet-plan-box h3,
+  .meal-logs-box h3 {
+    margin-top: 0;
+    color: #fa8063;
+  }
+  
+  .diet-plan-box form,
+  .meal-logs-box form {
+    margin-top: 1rem;
+  }
+  
+  .diet-plan-box label,
+  .meal-logs-box label {
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .diet-plan-box input[type="text"],
+  .diet-plan-box input[type="number"],
+  .diet-plan-box textarea,
+  .meal-logs-box input[type="text"],
+  .meal-logs-box input[type="date"],
+  .meal-logs-box input[type="number"],
+  .meal-logs-box textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .diet-plan-box button,
+  .meal-logs-box button {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #fa8063;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .diet-plan-box button:hover,
+  .meal-logs-box button:hover {
+    background-color: #f86e4f;
+  }
+  
+  .meal-logs-box ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .meal-logs-box li {
+    background: #fdfdfd;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-left: 4px solid #fa8063;
+  }
+  
+
+
+
+  /* DIET & NUTRITION OVERVIEW PAGE */
+.diet-overview-section {
+    min-height: 80vh; /* ensure vertical space & scrolling if needed */
+    padding: 3rem;
+    background-color: #faf3ee; /* subtle peach background */
+  }
+  
+  /* Container to hold the content */
+  .diet-overview-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .diet-overview-container h2 {
+    color: #fa8063; /* coral brand color */
+    margin-bottom: 2rem;
+  }
+  
+  /* Cards wrapper */
+  .dog-overview-cards {
+    display: flex;
+    flex-wrap: wrap;     /* wrap on small screens */
+    gap: 1.5rem;
+    justify-content: center; /* center cards horizontally */
+  }
+  
+  /* Individual card for each dog */
+  .dog-overview-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 240px;        /* fixed width for each card */
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;    /* or center, your choice */
+  }
+  
+  .dog-overview-card h3 {
+    margin-top: 0;
+    color: #fa8063;
+    margin-bottom: 0.5rem;
+  }
+  
+  .dog-overview-card p {
+    margin: 0.4rem 0;
+    color: #444;
+  }
+  
+  /* A button-like link for "Plan & Track Diet" */
+  .btn-primary {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #fa8063;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #f86e4f;
+  }
+  
+
+
+
+
+
+  /* Make sure the body or container has a soft background */
+body {
+    background-color: #fdf5ee; /* a soft, warm background */
+  }
+  
+  /* Section container for the diet & nutrition page */
+  .diet-nutrition-section {
+    min-height: 80vh;          /* ensures scrolling if content is tall */
+    padding: 3rem;             /* space from edges */
+    background-color: #fceee8; /* a light peachy shade for the section */
+  }
+  
+  /* Center and style the main content box */
+  .diet-nutrition-content {
+    max-width: 800px;
+    margin: 0 auto;            /* center horizontally */
+    background-color: #ffffff; /* white card background */
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);  
+  }
+  
+  /* Main heading style */
+  .diet-nutrition-content h2 {
+    color: #fa8063;            /* coral brand color */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Sub-headings: "Estimated Daily Calories", "Recommended Foods", etc. */
+  .diet-nutrition-content h3 {
+    color: #ff704d;            /* a slightly different coral/orange */
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .diet-nutrition-content h4 {
+    color: #fa8063;
+    margin-top: 1.5rem;
+  }
+  
+  /* Paragraph or smaller text */
+  .diet-nutrition-content p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  /* Lists of recommended foods, treats, supplements */
+  .diet-nutrition-content ul {
+    margin-left: 1.5rem; /* indent lists slightly */
+    margin-bottom: 1rem;
+    list-style-type: disc; /* bullet points */
+    color: #444;
+  }
+  
+  /* For special highlights (like the daily calorie mention) */
+  .estimated-calories {
+    font-weight: bold;
+    color: #fa8063;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Example: style bullet points or extras */
+  .diet-nutrition-content li {
+    margin-bottom: 0.4rem;
+  }
+  
+  /* If you have a 'meal-logs' area, you can style it similarly */
+  .meal-logs {
+    margin-top: 2rem;
+    background-color: #fff4ee; /* a subtle highlight for logs */
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ffdcd0;
+  }
+  .meal-logs h3 {
+    margin-top: 0;
+  }
+  
+  /* Buttons or links in the diet page (if any) */
+  .diet-nutrition-content a.btn-primary,
+  .diet-nutrition-content button.btn-primary {
+    display: inline-block;
+    background-color: #fa8063;
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .diet-nutrition-content a.btn-primary:hover,
+  .diet-nutrition-content button.btn-primary:hover {
+    background-color: #f86e4f;
+  }
+  
+
+
+
+
+  /* HEALTH RECORDS PAGE */
+.health-records-section {
+    min-height: 80vh;            /* ensures vertical space & scrolling */
+    padding: 3rem;
+    background-color: #fceee8;   /* a soft peach background, tweak as needed */
+  }
+  
+  .health-records-container {
+    max-width: 900px;
+    margin: 0 auto;               /* center horizontally */
+    background-color: #ffffff;    /* white card background */
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Heading for the main page */
+  .health-records-container h2 {
+    color: #fa8063;  /* coral brand color */
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Boxes inside the main container */
+  .medical-history-box,
+  .add-record-box {
+    margin-bottom: 2rem;
+  }
+  
+  /* Subheadings */
+  .medical-history-box h3,
+  .add-record-box h3 {
+    color: #fa8063;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  /* The list of existing records */
+  .medical-history-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  .medical-history-list li {
+    margin-bottom: 1rem;
+    color: #444;
+  }
+  .view-report-link {
+    color: #fa8063;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+  }
+  .view-report-link:hover {
+    text-decoration: none;
+  }
+  
+  /* Form to add a new record */
+  .add-record-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Form labels & inputs */
+  .add-record-box label {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .add-record-box input[type="date"],
+  .add-record-box textarea,
+  .add-record-box input[type="file"] {
+    margin-top: 0.3rem;
+    padding: 0.6rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Button to add the record */
+  .add-record-box button[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.8rem;
+    background-color: #fa8063;
+    color: #ffffff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .add-record-box button[type="submit"]:hover {
+    background-color: #f86e4f;
+  }
+  
+
+  /* The outer section for vertical spacing and background color */
+.health-records-section {
+    min-height: 80vh; /* ensures page can scroll if content is tall */
+    background: #fefaf2; /* a soft, light peach background */
+    padding: 3rem 1rem; /* top/bottom, side spacing */
+  }
+  
+  /* A centered "card" container */
+  .health-records-card {
+    max-width: 600px;
+    margin: 0 auto; 
+    background: #fff; 
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Coral headings */
+  .heading-coral {
+    color: #fa8063;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  /* List of existing records */
+  .history-list {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 2rem;
+    color: #444;
+  }
+  
+  .history-list li {
+    margin-bottom: 1rem;
+  }
+  
+  .record-notes {
+    margin: 0.5rem 0;
+  }
+  
+  /* Link for uploaded file */
+  .file-link {
+    display: inline-block;
+    color: #fa8063;
+    text-decoration: underline;
+    margin-top: 0.3rem;
+    font-size: 0.95rem;
+  }
+  
+  .file-link:hover {
+    text-decoration: none;
+  }
+  
+  /* The form container */
+  .add-record-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Labels for date/notes/file fields */
+  .add-record-form label {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    color: #444;
+  }
+  
+  /* Inputs/textarea styles */
+  .input-field, 
+  .input-textarea, 
+  .file-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.6rem;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+  }
+  
+  /* The large coral button */
+  .btn-coral {
+    background-color: #fa8063;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    align-self: start; /* so button doesn’t stretch horizontally */
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-coral:hover {
+    background-color: #f86e4f;
+  }
+  
+
+
+
+  /* TIPS SECTION */
+.tips-section {
+    min-height: 80vh;      /* ensures the page can scroll if tall */
+    background: #fdfaf2;   /* a soft background color */
+    padding: 3rem 1.5rem;  /* spacing around the content */
+  }
+  
+  .tips-container {
+    max-width: 800px;
+    margin: 0 auto;        /* center horizontally */
+    background: #ffffff;   /* white background for a card-like effect */
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Main heading at the top */
+  .tips-heading {
+    color: #fa8063;        /* coral brand color */
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Intro paragraph just below the heading */
+  .tips-intro {
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  
+  /* General tips, grooming, reminders - separate sections with sub-headings */
+  .tips-general,
+  .tips-grooming,
+  .tips-reminders {
+    margin-bottom: 2rem;
+  }
+  
+  .tips-general h3,
+  .tips-grooming h3,
+  .tips-reminders h3 {
+    color: #fa8063;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  /* Bulleted lists styling */
+  .tips-general ul,
+  .grooming-schedule,
+  .coat-care-list {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tips-general li,
+  .grooming-schedule li,
+  .coat-care-list li {
+    margin-bottom: 0.8rem;
+    color: #444;
+  }
+  
+  /* Extra heading for recommended products sub-heading */
+  .tips-grooming h4 {
+    color: #fa8063;
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  /* Reminders area */
+  .tips-reminders .reminder-card {
+    background-color: #fff4ee; /* subtle highlight */
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ffdcd0;
+    margin-bottom: 1rem;
+  }
+  
+  .tips-reminders .reminder-card h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #fa8063;
+  }
+
+
+
+
+  
+  
+  
+  

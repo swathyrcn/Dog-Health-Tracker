@@ -1,0 +1,43 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+import joblib
+
+# Create synthetic dataset or load your data
+data = {
+    'Breed': ['Golden Retriever', 'Pug', 'Labrador'] * 100,
+    'Age': [i % 12 + 1 for i in range(300)],
+    'Health Condition': ['Obesity', 'Normal', 'Underweight'] * 100,
+    'Walk Minutes': [30 + i % 60 for i in range(300)],
+    'Playtime Minutes': [20 + i % 40 for i in range(300)],
+    'Mental Stimulation Minutes': [10 + i % 20 for i in range(300)],
+    'Recommendation': ['Increase activity', 'Maintain routine', 'Reduce activity'] * 100,
+}
+df = pd.DataFrame(data)
+
+# Encode categorical columns
+label_encoders = {}
+for col in ['Breed', 'Health Condition', 'Recommendation']:
+    le = LabelEncoder()
+    df[col] = le.fit_transform(df[col])
+    label_encoders[col] = le
+
+# Train-test split
+X = df.drop('Recommendation', axis=1)
+y = df['Recommendation']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Standardize numeric features
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+# Train model
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
+
+# Save model and preprocessing tools
+joblib.dump(model, 'activity_model.pkl')
+joblib.dump(label_encoders, 'label_encoders.pkl')
+joblib.dump(scaler, 'scaler.pkl')

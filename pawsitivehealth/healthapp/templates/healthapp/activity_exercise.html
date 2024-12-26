@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity & Exercise</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fefaf2;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #fa8063;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+
+        .brand-name {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: #ffe8d7;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            color: #fa8063;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            color: #444;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Suggestions Section */
+        .suggestions {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .suggestions h2 {
+            color: #fa8063;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .suggestions ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            color: #444;
+        }
+
+        .suggestions ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Log Button */
+        .btn-log {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            background-color: #fa8063;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 2rem;
+        }
+
+        .btn-log:hover {
+            background-color: #f86e4f;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #fa8063;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="healthapp/images/paw.png" alt="Logo" class="logo-img">
+            <span class="brand-name">Pawsitive Health</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Dogs</a></li>
+            <li><a href="#">Health Records</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>Activity & Exercise for {{ dog.name }}</h1>
+        <p>Regular activity and exercise are essential to keep your dog healthy and happy. Below are some suggestions for your dog's daily activities:</p>
+    </section>
+
+    <!-- Suggestions Section -->
+    <section class="suggestions">
+        <h2>Suggested Activities:</h2>
+        <ul>
+            <li>Daily walks: 30–60 minutes.</li>
+            <li>Fetch or tug-of-war games for physical stimulation.</li>
+            <li>Interactive toys or puzzles for engagement.</li>
+            <li>Off-leash play in a safe area.</li>
+        </ul>
+
+        <h2>Tips for Mental Stimulation:</h2>
+        <ul>
+            <li>Teach new tricks or commands to challenge their mind.</li>
+            <li>Use slow-feeder bowls for meals to stimulate problem-solving.</li>
+            <li>Hide-and-seek games using treats or favorite toys.</li>
+        </ul>
+
+        
+        <a href="/dogs/{{ dog.id }}/activity/" class="btn-log">Log Today's Activity</a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Pawsitive Health. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends 'healthapp/base.html' %}
+{% load static %}
+{% block content %}
+<section class="diet-overview-section">
+  <div class="diet-overview-container">
+    <h2>Select a Dog for Diet & Nutrition</h2>
+
+    {% if dogs %}
+      <div class="dog-overview-cards">
+        {% for dog in dogs %}
+          <div class="dog-overview-card">
+            <h3>{{ dog.name }}</h3>
+            <p><strong>Breed:</strong> {{ dog.breed }}</p>
+            <p><strong>Age:</strong> {{ dog.age }}</p>
+            <p><strong>Weight:</strong> {{ dog.weight }} kg</p>
+
+            <!-- Link to the dog's detailed diet page -->
+            <a href="{% url 'diet_nutrition' dog.id %}" class="btn-primary">
+              Plan & Track Diet
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>You have no dogs yet.</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,18 @@
+<h2>Upcoming Reminders</h2>
+<h3>Vaccinations</h3>
+<ul>
+    {% for vaccination in upcoming_vaccinations %}
+        <li>{{ vaccination.dog.name }} - {{ vaccination.name }}: {{ vaccination.next_due_date }}</li>
+    {% empty %}
+        <li>No upcoming vaccinations.</li>
+    {% endfor %}
+</ul>
+
+<h3>Medications</h3>
+<ul>
+    {% for medication in upcoming_medications %}
+        <li>{{ medication.dog.name }} - {{ medication.name }}: {{ medication.next_due_date }}</li>
+    {% empty %}
+        <li>No upcoming medications.</li>
+    {% endfor %}
+</ul>

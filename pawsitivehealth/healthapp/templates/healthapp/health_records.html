@@ -1,0 +1,73 @@
+{% extends 'healthapp/base.html' %}
+{% load static %}
+{% block content %}
+<section class="health-records-section">
+  <div class="health-records-card">
+
+    <!-- Past Medical History Heading -->
+    <h2 class="heading-coral">Past Medical History</h2>
+
+    <!-- List of existing records -->
+    <ul class="history-list">
+      {% for record in records %}
+        <li>
+          <strong>{{ record.date|date:"M. d, Y" }}:</strong>
+          <div class="record-notes">
+            {{ record.notes }}
+          </div>
+          <!-- If a file was uploaded, link to it -->
+          {% if record.report %}
+            <br>
+            <a href="{{ record.report.url }}" target="_blank" class="file-link">
+              View/Download 
+            </a>
+          {% endif %}
+        </li>
+      {% empty %}
+        <li>No health records yet.</li>
+      {% endfor %}
+    </ul>
+
+    <!-- Add a New Record Heading -->
+    <h2 class="heading-coral">Add a New Record</h2>
+
+    <!-- Form -->
+    <form method="POST" enctype="multipart/form-data" class="add-record-form">
+      {% csrf_token %}
+
+      <!-- Date Field -->
+      <label for="id_date">Date:</label>
+      <input 
+        type="date" 
+        name="date" 
+        id="id_date" 
+        class="input-field"
+        placeholder="mm/dd/yyyy"
+      />
+
+      <!-- Notes Field -->
+      <label for="id_notes">Notes:</label>
+      <textarea 
+        name="notes"
+        id="id_notes"
+        rows="3"
+        class="input-textarea"
+        placeholder="Vaccinations, treatments, surgeries, etc."
+      ></textarea>
+
+      <!-- File Field -->
+      <label for="id_report">Upload Report/Prescription (optional):</label>
+      <input 
+        type="file"
+        name="report"
+        id="id_report"
+        class="file-input"
+        accept=".pdf,.jpg,.png,.jpeg,.docx"
+      />
+
+      <button type="submit" class="btn-coral">Add Record</button>
+    </form>
+
+  </div>
+</section>
+{% endblock %}

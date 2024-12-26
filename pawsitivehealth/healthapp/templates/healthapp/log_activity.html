@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Activity</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fdf5ee; /* Soft warm background */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #fa8063;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Form Styling */
+        .activity-form {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #fa8063;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #fa8063;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #f86e4f;
+        }
+
+        /* Table Styling */
+        .table-container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            overflow-x: auto; /* Ensure scrollability */
+        }
+
+        .activity-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .activity-table th,
+        .activity-table td {
+            text-align: left;
+            padding: 0.8rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .activity-table th {
+            background-color: #fa8063;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .activity-table tr:hover {
+            background-color: #fef2ef;
+        }
+
+        /* Tips Section */
+        .tips-section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        .tips-section h3 {
+            font-size: 1.5rem;
+            color: #fa8063;
+            margin-bottom: 1rem;
+        }
+
+        .tips-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-section li {
+            margin-bottom: 0.8rem;
+            color: #444;
+        }
+
+        .tips-section li strong {
+            color: #fa8063;
+        }
+
+        footer {
+            background-color: #fa8063;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <h2 class="section-title">Log Today's Activity for {{ dog.name }}</h2>
+        <form method="POST" class="activity-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="walks">Walk Minutes:</label>
+                <input type="number" id="walks" name="walks" class="input-field" required>
+            </div>
+            <div class="form-group">
+                <label for="playtime">Playtime Minutes:</label>
+                <input type="number" id="playtime" name="playtime" class="input-field" required>
+            </div>
+            <div class="form-group">
+                <label for="mental_stimulation">Mental Stimulation Minutes:</label>
+                <input type="number" id="mental_stimulation" name="mental_stimulation" class="input-field" required>
+            </div>
+            <button type="submit" class="btn-submit">Log Activity</button>
+        </form>
+
+        <div class="table-container">
+            <h3 class="section-title">Daily Activity Tracker</h3>
+            {% if activity_logs %}
+            <table class="activity-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Walk Minutes</th>
+                        <th>Playtime Minutes</th>
+                        <th>Mental Stimulation Minutes</th>
+                        <th>Total Activity Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for log in activity_logs %}
+                    <tr>
+                        <td>{{ log.date }}</td>
+                        <td>{{ log.walk_minutes }}</td>
+                        <td>{{ log.playtime_minutes }}</td>
+                        <td>{{ log.mental_stimulation_minutes }}</td>
+                        <td>{{ log.walk_minutes|add:log.playtime_minutes|add:log.mental_stimulation_minutes }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>No activity logs available. Start logging activities for {{ dog.name }}!</p>
+            {% endif %}
+        </div>
+
+        <div class="tips-section">
+            <h3>Activity Tips</h3>
+            {% if tips %}
+            <ul>
+                <li><strong>Walks:</strong> {{ tips.walks }}</li>
+                <li><strong>Playtime:</strong> {{ tips.playtime }}</li>
+                <li><strong>Mental Stimulation:</strong> {{ tips.mental_stimulation }}</li>
+            </ul>
+            {% endif %}
+        </div>
+    </section>
+
+    <footer>
+        © 2024 Pawsitive Health. All rights reserved.
+    </footer>
+</body>
+</html>

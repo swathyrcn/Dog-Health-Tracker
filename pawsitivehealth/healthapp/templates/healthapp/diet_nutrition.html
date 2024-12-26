@@ -1,0 +1,51 @@
+{% extends 'healthapp/base.html' %}
+{% load static %}
+{% block content %}
+<section class="diet-nutrition-section">
+  <div class="diet-nutrition-content">
+    <h2>Plan & Track Diet for {{ dog.name }}</h2>
+
+    {% if daily_calories %}
+      <p><strong>Estimated Daily Calories:</strong> {{ daily_calories|floatformat:0 }} kcal/day</p>
+    {% else %}
+      <p>We don't have enough info to calculate daily calories (no weight).</p>
+    {% endif %}
+
+    <h3>Recommended Foods</h3>
+    {% if recommended_foods %}
+      <ul>
+        {% for item in recommended_foods %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No specific food recommendations found.</p>
+    {% endif %}
+
+    <h3>Recommended Treats</h3>
+    {% if recommended_treats %}
+      <ul>
+        {% for item in recommended_treats %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No specific treat recommendations found.</p>
+    {% endif %}
+
+    <h3>Recommended Supplements</h3>
+    {% if recommended_supplements %}
+      <ul>
+        {% for item in recommended_supplements %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No specific supplement recommendations found.</p>
+    {% endif %}
+
+    <!-- If you have a MealLog form, you can display it here -->
+    ...
+  </div>
+</section>
+{% endblock %}
